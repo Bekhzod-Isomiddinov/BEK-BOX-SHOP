@@ -147,17 +147,3 @@
 
 </body>
 </html>
-
-
-
-$sql_db = "CREATE DATABASE IF NOT EXISTS "
-$this->db->query($sql_db);
-print_r($this->db->error());
-$this->$user_id = $this->load->database($db2, TRUE);
-$arr_table_lists= $this->retun_all_tables_from_database($this->db->database);
-$sql_new = "";
-$sql_new = "SHOW CREATE TABLE " . $this->db->database . "." . $tbl_name->table_name;
-$result = $query->result_array();
-$sql_new = strtolower($result[0]['Create Table']);
-$sql_new = str_replace("create table", "create table if not exists ", $sql_new);
-$this->$user_id->query($sql_new);
