@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <title>BEK-BOX SHOP</title>
+</head>
+<body>
+    <div class="header full-width">
+        <!-- first main row -->
+        <div class="row-wrapper">
+            <div class="logo">
+                <img src="img/logo.jpeg" alt="">
+            </div>
+
+
+            <div class="nav">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Electronic</a></li>
+                    <li><a href="">Automobile</a></li>
+                    <li><a href="">Cosmetics</a></li>
+                    <li><a href="">Clothes</a></li>
+                    <li><a href="">Stationery</a></li>
+                    <li><a href="">Toys</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+
+                <form action="/action_page.php">
+                    <label for="username">Username:</label><br>
+                    <input type="text" id="username" name="pwd"><br><br>
+                    <label for="pwd">Password:</label><br>
+                    <input type="password" id="pwd" name="pwd"><br><br>
+                    <input type="radio" name="gender" value="male"> Male
+                    <input type="radio" name="gender" value="female"> Female <br><br>
+                    <label for="birthday">Birthday:</label>
+                    <input type="date" id="birthday" name="birthday"><br><br>
+
+
+                    <label for="search"></label>
+                    <input type="search" placeholder="Search.." name="search" id="search">
+                    <input type="image" src="img/imageIcon.png" alt=""
+                    width="30px"><br><br>
+
+
+                    <label for="phone">Enter your phone number:</label><br>
+                    <input type="tel" id="phone" name="phone" placeholder="010-2307-****"><br><br>
+
+                    <label for="email">Enter your email:</label><br>
+                    <input type="email" id="email" name="email" placeholder="bekhzod23@gmail.com"><br><br>
+
+                    <label for="myfile"></label>
+                    <input type="file" id="file" name="myfile"><br><br>
+
+                    <label for="countries">Choose your country:</label>
+                    <select name="countries" id="countries" size="1">
+                        <option value="uzbekistan">Uzbekistan</option>
+                        <option value="pakistan">Pakistan</option>
+                        <option value="south Korea">South Korea</option>
+                        <option value="bangladesh">Bangladesh</option>
+                        <option value="china">China</option>
+                    </select><br><br>
+                    <textarea name="message" rows="10" cols="30"> Write your feedback..... </textarea> <br><br>
+                        <input type="submit" value="Submit">
+                </form>
+
+            </div>
+
+
+
+
+        </div>
+
+        <!-- second row -->
+        <div class="slider full-width">
+            <ul>
+                <li class="hidden"><img src="img/Slider1.jpeg" alt=""></li>
+            </ul>
+
+        </div>
+    </div>
+
+    <div class="content full-width">
+        <div class="main-content sixtypro">
+            <h2>About My Website</h2>
+            <p>
+                A website that allows people to buy physical goods, services, and digital products over the internet rather than at a brick-and-mortar location.
+            </p>
+        </div>
+
+        <div class="sidebar">
+            <div class="saleproduct">
+                <h2>Sale Products</h2>
+                <div class="sales">
+                    <ul>
+                        <li>iPhone 11</li>
+                        <li>Airpods</li>
+                        <li>iPad</li>
+                        <li>iWatch</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="googleads">
+                <iframe src=""></iframe>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="box-wrapper">
+        <div class="box">
+            <div class="box-title">New Samrt Watch</div>
+           <div class="box-body">Apple Watch Series 8 GPS + Cellular.</div>
+           <div class="box-footer">See more</div>
+        </div>
+
+        <div class="box">
+            <div class="box-title">New Remote Controller</div>
+            <div class="box-body">Xbox Elite Wireless Controller Series 2. The best wireless gaming controller.</div>
+            <div class="box-footer">See more</div>
+        </div>
+
+        <div class="box">
+            <div class="box-title">New Laptop</div>
+            <div class="box-body">Apple MacBook Air (M2)</div>
+            <div class="box-footer">See more</div>
+        </div>
+
+        <div class="box">
+            <div class="box-title">New Headphones</div>
+            <div class="box-body">Sony WH-1000XM5. The best headphones overall.</div>
+            <div class="box-footer">See more</div>
+        </div>
+    </div>
+
+    <div class="footer full-width">
+        copyright 2022 &copy;
+        <p>BEK-BOX</p>
+
+    </div>
+
+    <script></script>
+
+</body>
+</html>
+
+
+
+$sql_db = "CREATE DATABASE IF NOT EXISTS "
+$this->db->query($sql_db);
+print_r($this->db->error());
+$this->$user_id = $this->load->database($db2, TRUE);
+$arr_table_lists= $this->retun_all_tables_from_database($this->db->database);
+$sql_new = "";
+$sql_new = "SHOW CREATE TABLE " . $this->db->database . "." . $tbl_name->table_name;
+$result = $query->result_array();
+$sql_new = strtolower($result[0]['Create Table']);
+$sql_new = str_replace("create table", "create table if not exists ", $sql_new);
+$this->$user_id->query($sql_new);
